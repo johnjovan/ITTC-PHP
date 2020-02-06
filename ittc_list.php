@@ -11,6 +11,7 @@
             position: relative;
             top: 20px;
         }
+
         #form{
             margin: 20px 10px;
             border: 2px solid black;
@@ -24,19 +25,23 @@
             margin-bottom: 20px;
             text-align: center;
         }
+
         #name-list{
             position: relative;
             top: 50px;
         }
+
         #form:hover{
             color: black;
             background: blueviolet;
             border: none;
         }
+
         #name-list{
             text-decoration: none;
         }
-        .name{
+
+        /* .name{
             padding: 5px;
             border: 3px solid black;
             text-decoration: none;
@@ -45,7 +50,40 @@
             border-radius: 5px;
             text-align: center;
             font-weight: bold;
+        } */
+
+        #name-list{
+            margin-left: 10px;
         }
+        thead tr th{
+            margin-left: 20px;
+            word-spacing: 100px;
+            margin: 20px;
+            border: 1px solid black;
+            width: 150px;
+        }
+
+        tbody tr td{
+            padding: 10px 0;
+        }
+
+        tbody tr td a.name{
+            text-decoration: none;
+            background: black;
+            color: yellow;
+            word-spacing: 50px;
+        }
+
+        tbody tr td a.name:hover{
+            background: yellow;
+            color: black;
+        }
+
+        #image{
+            height: 100px;
+            width: 100px;
+        }
+
     </style>
 </head>
 <body>
@@ -73,18 +111,9 @@
                 <th>Birthday</th>
                 <th>Age</th>
                 <th>Gender</th>
-                <th>Height</th>
-                <th>Weight</th>
                 <th>Status</th>
-                <th>Spouse</th>
-                <th>Children</th>
-                <th>Pastor</th>
-                <th>Skills</th>
-                <th>Literate</th>
-                <th>Years</th>
-                <th>Months</th>
-                <th>User Level</th>
             </tr>
+            
         </thead>
         <tbody>
             <?php foreach ($list as $item) { ?>
@@ -95,14 +124,8 @@
                     <td><?=$item['Birthday'] ?></td>
                     <td><?=$item['Age'] ?></td>
                     <td><?=$item['Gender'] ?></td>
-                    <td><?=$item['Height'] ?></td>
-                    <td><?=$item['Weight'] ?></td>
                     <td><?=$item['Status'] ?></td>
-                    <td><?=$item['Skills'] ?></td>
-                    <td><?=$item['Literate'] ?></td>
-                    <td><?=$item['Years'] ?></td>
-                    <td><?=$item['Months'] ?></td>
-                    <td><?=$item['User Level'] ?></td>
+                    <td><img id="image" src="<?=$item['Image'] ?>" alt=""></td>
                 </tr>
             <?php } ?>
 
