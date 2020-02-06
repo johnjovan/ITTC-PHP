@@ -12,6 +12,8 @@
             padding: 0;
             text-align: center;
         }
+
+
     </style>
 </head>
 
@@ -31,9 +33,9 @@
     <header>
         <div id="title">
             <h1>IT TRAINING CENTER [APPLICATION FORM]</h1>
-            <hr>
         </div>
     </header>
+    <hr>
     <div class="container">
         <form method="post" action="ittc_action.php">
             <b>I.PERSONAL DATA:</b><br>
