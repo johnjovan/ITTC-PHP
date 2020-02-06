@@ -17,7 +17,8 @@
         $stmt->execute([ $ID ]);
         $item = $stmt->fetch();
 
-        echo 'Name : ' . $item['Name'] . '<br><br>';
+        echo 'Name : ' . $item['Name'];
+        echo '<img src="'.$item['Image'].'" alt="" style="width: 100px;"><br><br>';
         echo 'Number : ' . $item['Number'] . '<br><br>';
         echo 'Address : ' . $item['Address'] . '<br><br>';
         echo 'Birthday : ' . $item['Birthday'] . '<br><br>';
