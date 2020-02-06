@@ -8,6 +8,29 @@
 </head>
 <body>
     <?php
+    // file
+    // uploads_dir = ' ';
+
+    $filepath = null;
+    if($_FILES['Image']['error'] === UPLOAD_ERR_OK) {
+    $uploaddir = $_SERVER['DOCUMENT_ROOT'].'/uploads/';
+    $uploadfile = $uploaddir . basename($_FILES['Image']['name']);
+
+    if (!is_dir(upload)){
+        mkdir($uploaddir);
+
+        // MKDIR - create/MaKe DIRectory
+    }
+
+    if (move_uploaded_file($_FILES['Image']['tmp_name'], $uploadfile)){
+        // echo "file upload success.";
+        $filepath = '/uploads/'.basename($_FILES['Image']['name']);
+    } else {
+        echo 'files information:';
+        print_r($_FILES);
+    }
+}
+
     $ID = $_POST ['ID'];
     $Name = $_POST[Name];
     $Number = $_POST[Number];
@@ -86,6 +109,10 @@
         Address2 = :Address2,
         Name3 = :Name3,
         Contact = :Contact';
+        if ($filepath) {
+            $sql .= ',Image = :image';
+        }
+
         $sql .= ' WHERE ID = :ID';
         $stmt = $pdo-prepare($sql);
         $params = [
@@ -125,6 +152,9 @@
             'Name3' => $Name3,
             'Contact' => $Contact,
         ];
+        if ($filepath) {
+            $params['Image'] = $filepath;
+        }
         $stmt->execute($params);
     } else {
         $stmt = $pdo->prepare('INSERT INTO ittc_member (
@@ -132,14 +162,14 @@
             Spouse, Children, Pastor, Elementary, Year1, HS, Year2, College,
             Year3, Graduate, Year4, Skills, Literate, Years, Months, User,
             Employed, Company, Position, Name1, Address1, Name2, Address2,
-            Name3, Contact
+            Name3, Contact, Image
             ) VALUES (
-                ?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?
+                ?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?
             )');
             $stmt->execute([ $Name, $Number, $Address, $Birthday, $Age, $Gender, $Height, $Weight,
                 $Status, $Spouse, $Children, $Pastor, $Elementary, $Year1, $HS, $Year2, $College,
                 $Year3, $Graduate, $Year4, $Skills, $Literate, $Years, $Months, $User, $Employed,
-                $Company, $Position, $Name1, $Address1, $Name2, $Address2, $Name3, $Contact]);
+                $Company, $Position, $Name1, $Address1, $Name2, $Address2, $Name3, $Contact, $filepath]);
     }
 
     print_r($stmt->errorInfo());
