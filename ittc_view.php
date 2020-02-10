@@ -6,6 +6,48 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>PHP ITTC View</title>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <style>
+        
+        body{
+            background: black;
+            color: white;
+        }
+
+        #edit{
+            border: 3px solid white;
+            width: 100px;
+            background: black;
+            color: blueviolet;
+            padding: 8px 20px;
+            text-align: center;
+            font-size: 18px;
+            font-weight: bold;
+            text-decoration: none;
+        }
+        #edit:hover{
+            color: black;
+            background: blueviolet;
+            border: none;
+            border-raduis: 6px;
+        }
+        #delete{
+            position: relative;
+            top: 10px;
+            background: black;
+            color: blueviolet;
+            padding: 10px;
+            font-size: 18px;
+            font-weight: bold;
+            border: 3px solid white;
+            border-raduis: 6px;
+        }
+        #delete:hover{
+            color: black;
+            background: blueviolet;
+            border: none;
+            border-raduis: 6px;
+        }
+    </style>
 </head>
 <body>
     <?php
@@ -54,13 +96,17 @@
         echo 'Contact : ' . $item['Contact'] . '<br><br>';
 
     ?>
+    
+    <!-- <div>
+        <span>Name</span>: <span><?=$item['Name'] ?></span>
+    </div> -->
 
-    <a href="ittc_member.php?ID=<?=$item['ID'] ?>" > EDIT </a>
+    <a id="edit" href="ittc_member.php?ID=<?=$item['ID'] ?>" > Edit </a>
     <form id="delete-form" action="ittc_delete.php" method="post">
         <input type="hidden" name="ID" value="<?=$item['ID'] ?>" />
-        <button type="submit">Delete</button>
+        <button id="delete" type="submit">Delete</button>
     </form>
-
+    <br><br><br>
     <script>
     $(function(){
         $('#delete-form').submit(function(event) {

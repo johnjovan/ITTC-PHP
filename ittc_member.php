@@ -8,12 +8,133 @@
     <title>IT TRAINING CENTER</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <style>
-        header {
-            margin: 0;
-            padding: 0;
-            text-align: center;
+        body{
+            background: black;
         }
-
+        header {
+            height: 
+            margin-top: 10px;
+            text-align: center;
+            color: grey;
+            background: black;
+        }
+        input, textarea{
+            background: black;
+            color: white;
+            border-radius: 4px;
+            border: none;
+        }
+        
+        #form{
+            background-image: url("../Images/Brown.jpg");
+            background-size: cover;
+            background-repeat: no-repeat;
+            color: white;
+        }
+        
+        #I label{
+            width: 210px;
+            display: inline-block;
+        }
+        #II label{
+            width: 110px;
+            display: inline-block;
+        }
+        #Man{
+            position: relative;
+            left: -15%;
+        }
+        #Woman{
+            position: relative;
+            left: -13%;
+        }
+        #age{
+            position: relative;
+            left: 15%;
+        }
+        #weight{
+            position: relative;
+            left: 10%;
+        }
+        #Weight{
+            position: relative;
+            left: -40px;
+        }
+        #IV label{
+            width: 110px;
+            display: inline-block;
+        }
+        #V label{
+            width: 125px;
+            display: inline-block;
+        }
+        #submit{
+            position: absolute;
+            left: 50%;
+            padding: 10px;
+            border: none;
+            background: black;
+            border-radius: 6px;
+            color: violet;
+            font-size: 20px;
+            font-weight: bold;
+            transform: translate(-50%,-50%);
+            letter-spacing: 0.5px;
+            box-shadow: 0 20px 50px rgba(0,0,0,.9);
+            word-spacing: 5px;
+        }
+        #submit:before{
+            content: '';
+            position: absolute;
+            top: 2px;
+            left: 2px;
+            bottom: 2px;
+            width: 50%;
+            background: rgba(255,255,255,0.05);
+        }
+        #submit span:nth-child(1){
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(to right, pink, violet, indigo);
+            animation: animate1 linear infinite;
+        }
+        @keyframes animate1{
+            0%
+            {
+                transform: translateX(-100%)
+            }
+            100%
+            {
+                transform: translateX(-100%)
+            }
+        }
+        #submit span:nth-child(2){
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 3px;
+            height: 100%;
+            background: linear-gradient(to bottom, pink, violet, indigo);
+        }
+        #submit span:nth-child(3){
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(to left, pink, violet, indigo);
+        }
+        #submit span:nth-child(4){
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 3px;
+            height: 100%;
+            background: linear-gradient(to top, pink, violet, indigo);
+        }
     </style>
 </head>
 
@@ -37,8 +158,9 @@
     </header>
     <hr>
     </div>
-    <div class="container">
+    <div id="form" class="container">
         <form method="post" action="ittc_action.php" enctype="multipart/form-data">
+        <div id="I">
             <b>I.PERSONAL DATA:</b><br>
             <label>Picture Upload:
                 <input type="file" name="Image">
@@ -50,26 +172,27 @@
             <input type="number" name="Number" id="Number"><br>
 
             <label>Address:</label>
-            <input type="text" name="Address" id="Address" size="60"><br>
+            <input type="text" name="Address" id="Address" size="40"><br>
 
             <label>Birthday:</label>
             <input type="date" name="Birthday" id="Birthday"> 
             <!-- &nbsp;&nbsp;&nbsp;&nbsp;&gt;&lt;&quot;&#13; -->
 
-            <label>Age:</label>
+            <label id="age">Age:</label>
             <input type="number" name="Age" id="Age" min="0" max="100"><br>
 
-            <label>Gender - Man</label>
+            <label>Gender:</label>
+            <label> Man</label>
             <input type="radio" name="Gender" id="Man" value="Man">
 
             <label> Woman</label>
             <input type="radio" name="Gender" id="Woman" value="Woman"><br>
 
             <label>Height:</label>
-            <input type="number" name="Height" id="Height">Cm
+            <input type="number" name="Height" id="Height" placeholder="Cm">
 
-            <label>Weight:</label>
-            <input type="number" name="Weight" id="Weight">Kg <br>
+            <label id="weight">Weight:</label>
+            <input type="number" name="Weight" id="Weight" placeholder="Kg"> <br>
 
             <label>Civil Status:</label>
             <input type="text" name="Status" id="Status"><br>
@@ -83,8 +206,11 @@
             <label>Religious Affilation:</label>
             <input type="text" name="Pastor" id="Pastor">
 
+        </div>
+
             <hr>
 
+        <div id="II">
             <b>II.EDUCATIONAL BACKGROUND:</b><br>
             <label>Elementary:</label>
             <input type="text" name="Elementary">
@@ -111,10 +237,12 @@
             <input type="number" name="Year4"><br>
 
             <label>Special Skills:</label>
-            <textarea name="Skills" cols="50" rows="5"></textarea>
+            <textarea name="Skills" cols="58" rows="5"></textarea>
+        </div>
 
             <hr>
 
+        <div id="III">
             <b>III.QUESTION:</b><br>
             <label>1.Are you computer literate?</label>
             YES <input type="radio" name="Literate" value="yes">
@@ -131,11 +259,12 @@
             NO <input type="radio" name="Employed" value="no1"> <br>
             <label></label>
             <label>5.(4-If yes)Name if Company?</label> <br>
-            Company <input type="text" name="Company" placeholder="Company">
-            Position <input type="text" name="Position" placeholder="Position">
+            Company: <input type="text" name="Company" placeholder="Company">
+            Position: <input type="text" name="Position" placeholder="Position">
+        </div>
 
             <hr>
-
+        <div id="IV">
             <b>IV.CHARACTER REFERENCES:</b><br>
             <label>Name 1: </label>
             <input type="text" name="Name1" placeholder="Fullname" size="30px"> <br>
@@ -145,22 +274,39 @@
             <input type="text" name="Name2" placeholder="Fullname" size="30px"> <br>
             <label>Address: </label>
             <input type="text" name="Address2" size="50px">
+        </div>
 
             <hr>
 
-            <b>V.Person to be contacted in case of emergency:</b>
+        <div id="V">
+            <b>V.Person to be contacted in case of emergency:</b><br>
             <label>Name: </label>
-            <input type="text" name="Name3" placeholder="Fullname">
+            <input type="text" name="Name3" placeholder="Fullname"><br>
             <label>Contact Number: </label>
             <input type="number" name="Contact"> <br>
-
+        </div>
+        <br><br>
             <hr>
+            
+            <a id="submit">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                Save Data
+            </a>
+            <!-- <div id="Savedata">
+                <span></span>
+                <span></span>
+                <input type="submit" id="submit" value="Save Data">
+                <span></span>
+                <span></span>
+            </div> -->
 
-            <input type="submit" id="submit" value="Save Data">
 
+            <br><br><br><br><br>
         </form>
     </div>
-    <br><br><br><br><br><br><br>
 
 
 

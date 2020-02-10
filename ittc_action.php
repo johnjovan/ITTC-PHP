@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>PHP ITTC ACTION</title>
+    <style>
+    
+    </style>
 </head>
 <body>
     <?php
@@ -172,7 +175,7 @@
                 $Company, $Position, $Name1, $Address1, $Name2, $Address2, $Name3, $Contact, $filepath]);
     }
 
-    print_r($stmt->errorInfo());
+    // print_r($stmt->errorInfo());
 
     echo 'Name : ' . $Name . '<br><br>';
     echo 'Number : ' . $Number . '<br><br>';

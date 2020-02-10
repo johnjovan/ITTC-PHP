@@ -7,6 +7,10 @@
     <title>PHP ITTC List</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <style>
+    body{
+        background: black;
+        color: grey;
+    }
         span a{
             position: relative;
             top: 20px;
@@ -14,11 +18,11 @@
 
         #form{
             margin: 20px 10px;
-            border: 2px solid black;
+            border: 3px solid black;
             border-radius: 6px;
             text-decoration: none;
-            color: blueviolet;
-            background-color: black;
+            color: black;
+            background-color: blueviolet;
             font-size: large;
             font-weight: bold;
             padding: 10px;
@@ -32,9 +36,9 @@
         }
 
         #form:hover{
-            color: black;
-            background: blueviolet;
-            border: none;
+            border: 3px solid blueviolet;
+            color: blueviolet;
+            background: black;
         }
 
         #name-list{
@@ -59,19 +63,27 @@
             margin-left: 20px;
             word-spacing: 100px;
             margin: 20px;
-            border: 1px solid black;
+            border: 2px solid black;
             width: 150px;
+            text-align: center;
         }
 
         tbody tr td{
-            padding: 10px 0;
+            text-align: center;
+            border: 2px solid black;
+            top: 0;
+            padding: 0;
+            margin: 0;
         }
 
         tbody tr td a.name{
+            font-size: 20px;
             text-decoration: none;
             background: black;
             color: yellow;
             word-spacing: 50px;
+            border: 3px solid black;
+            border-radius: 6px;
         }
 
         tbody tr td a.name:hover{
@@ -80,8 +92,8 @@
         }
 
         #image{
-            height: 100px;
-            width: 100px;
+            height: 120px;
+            width: 150px;
         }
 
     </style>
@@ -112,8 +124,8 @@
                 <th>Age</th>
                 <th>Gender</th>
                 <th>Status</th>
+                <th>Photo</th>
             </tr>
-            
         </thead>
         <tbody>
             <?php foreach ($list as $item) { ?>
