@@ -15,7 +15,7 @@
             height: 
             margin-top: 10px;
             text-align: center;
-            color: grey;
+            color: white;
             background: black;
         }
         input, textarea{
@@ -69,21 +69,25 @@
             display: inline-block;
         }
         #submit{
+            letter-spacing: 0.5px;
+            font-size: 20px;
+            font-weight: bold;
+            color: blueviolet;
+            word-spacing: 3px;
+            width: 100%;
+        }
+        #submits{
             position: absolute;
             left: 50%;
             padding: 10px;
             border: none;
             background: black;
             border-radius: 6px;
-            color: violet;
-            font-size: 20px;
-            font-weight: bold;
             transform: translate(-50%,-50%);
-            letter-spacing: 0.5px;
             box-shadow: 0 20px 50px rgba(0,0,0,.9);
-            word-spacing: 5px;
+            overflow: hidden;
         }
-        #submit:before{
+        /* #submits:before{
             content: '';
             position: absolute;
             top: 2px;
@@ -91,50 +95,86 @@
             bottom: 2px;
             width: 50%;
             background: rgba(255,255,255,0.05);
-        }
-        #submit span:nth-child(1){
+        } */
+        #submits span:nth-child(1){
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 3px;
             background: linear-gradient(to right, pink, violet, indigo);
-            animation: animate1 linear infinite;
+            animation: animate1 2s linear infinite;
         }
         @keyframes animate1{
             0%
             {
-                transform: translateX(-100%)
+                transform: translateX(-100%);
             }
             100%
             {
-                transform: translateX(-100%)
+                transform: translateX(100%);
             }
         }
-        #submit span:nth-child(2){
+        #submits span:nth-child(2){
             position: absolute;
             top: 0;
             right: 0;
             width: 3px;
             height: 100%;
             background: linear-gradient(to bottom, pink, violet, indigo);
+            animation: animate2 2s linear infinite;
+            animation-delay: 1s;
         }
-        #submit span:nth-child(3){
+        @keyframes animate2{
+            0%
+            {
+                transform: translateY(-100%);
+            }
+            100%
+            {
+                transform: translateY(100%);
+            }
+        }
+        #submits span:nth-child(3){
             position: absolute;
             bottom: 0;
             left: 0;
             width: 100%;
             height: 3px;
             background: linear-gradient(to left, pink, violet, indigo);
+            animation: animate3 2s linear infinite;
         }
-        #submit span:nth-child(4){
+        @keyframes animate3{
+            0%
+            {
+                transform: translateX(100%);
+            }
+            100%
+            {
+                transform: translateX(-100%);
+            }
+        }
+        #submits span:nth-child(4){
             position: absolute;
             top: 0;
             left: 0;
             width: 3px;
             height: 100%;
             background: linear-gradient(to top, pink, violet, indigo);
+            animation: animate4 2s linear infinite;
+            animation-delay: 1s;
         }
+        @keyframes animate4{
+            0%
+            {
+                transform: translateY(100%);
+            }
+            100%
+            {
+                transform: translateY(-100%);
+            }
+        }
+        
     </style>
 </head>
 
@@ -288,12 +328,12 @@
         <br><br>
             <hr>
             
-            <a id="submit">
+            <a id="submits">
                 <span></span>
                 <span></span>
                 <span></span>
                 <span></span>
-                Save Data
+                <input type="submit" id="submit" value="Save Data">
             </a>
             <!-- <div id="Savedata">
                 <span></span>
