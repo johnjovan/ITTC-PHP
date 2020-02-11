@@ -113,11 +113,11 @@
         Name3 = :Name3,
         Contact = :Contact';
         if ($filepath) {
-            $sql .= ',Image = :image';
+            $sql .= ',Image = :Image';
         }
 
         $sql .= ' WHERE ID = :ID';
-        $stmt = $pdo-prepare($sql);
+        $stmt = $pdo->prepare($sql);
         $params = [
             'ID' => $ID,
             'Name' => $Name,
