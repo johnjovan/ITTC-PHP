@@ -106,7 +106,9 @@
         <input type="hidden" name="ID" value="<?=$item['ID'] ?>" />
         <button id="delete" type="submit">Delete</button>
     </form>
+
     <br><br><br>
+    
     <script>
     $(function(){
         $('#delete-form').submit(function(event) {
