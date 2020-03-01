@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MySQL Command</title>
+</head>
+<body>
+
+
+
+
+
+    <!--*  Option-1  *-->
+    <!--!  USE SCHEMASname;  !-->
+    <!--!  SELECT * FROM TABLESname;  !-->
+    
+
+    <!--!  To SEARCH Data  !-->
+    <!--?  SELECT COLUMNSname FROM TABLESname;  ?-->
+    <!--?  SELECT COLUMNSname, COLUMNSname FROM TABLESname  ?-->
+
+    <!--?  SELECT * FROM TABLESname WHERE COLUMNSname = 'content name';  ?-->
+    <!--?  SELECT * FROM TABLESname WHERE COLUMNSname = ID number;  ?-->
+
+    <!--?  SELECT * FROM TABLESname WHERE COLUMNSname LIKE '%content or text%';  ?-->
+
+
+    <!--!  To UPDATE Data  !-->
+    <!--?  UPDATE TABLESname SET COLUMNSname = 'change cotent name or text' WHERE ID = 1;  ?-->
+    <!--?  UPDATE TABLESname SET COLUMNSname = 'change cotent name or text' WHERE COLUMNSname LIKE '%name of content%';  ?-->
+
+
+    <!--!  To DELETE Data  !-->
+    <!--?  DELETE FROM TABLESname WHERE COLUMNSname = 'content name';  ?-->
+    <!--?  DELETE FROM TABLESname;  ?-->
+
+
+    <!--!  OTHER Command  !-->
+    <!--?  SELECT COLUMNSname, left(another COLUMNSname, 5) FROM TABLESname;  ?-->
+    <!--?  SELECT count(ID) TABLESname;  ?-->
+
+    <!--?  SELECT Text FROM SCHEMASname WHERE Text LIKE 'Hello 1' AND Date >= '2020-01-03' AND Date < '2020-01-05';  ?-->
+    <!--?  SELECT Text FROM SCHEMASname WHERE Text LIKE 'Hello 1' AND Date >= '2020-01-03' OR Date < '2020-01-05';  ?-->
+
+    
+    <!--!  To INSERT Data  !-->
+    <!--?  INSERT INTO TABLESname SET Name = 'Jovan1', Age = 21, Address = 'Cainta', Date = '2020-01-01', Messages = 'Hello World!';  ?-->
+    <!--?  INSERT INTO TABLESname SET Name = 'Jovan2', Age = 22, Address = 'Taytay', Date = '2020-01-02', Messages = 'Hello Nice!';  ?-->
+    <!--?  INSERT INTO TABLESname SET Name = 'Jovan3', Age = 23, Address = 'Angono', Date = '2020-01-03', Messages = 'Hello Morning!';  ?-->
+    <!--?  INSERT INTO TABLESname SET Name = 'Jovan4', Age = 24, Address = 'Pasig', Date = '2020-01-04', Messages = 'Hello Evening!';  ?-->
+    <!--?  INSERT INTO TABLESname SET Name = 'Jovan5', Age = 25, Address = 'Cavite', Date = '2020-01-05', Messages = 'Hello Good!';  ?-->
+
+
+    <!--*  Option-2  *-->
+    <!--!  SELECT * FROM SCHEMASname.TABLESname;  !-->
+
+
+    <!--!  To SEARCH Data  !-->
+    <!--?  SELECT COLUMNSname FROM SCHEMASname.TABLESname;  ?-->
+    <!--?  SELECT COLUMNSname, COLUMNSname FROM SCHEMASname.TABLESname;  ?-->
+    
+    <!--?  SELECT * FROM SCHEMASname.TABLESname WHERE COLUMNSname = 'content name';  ?-->
+    <!--?  SELECT * FROM SCHEMASname.TABLESname WHERE COLUMNSname = ID number;  ?-->
+
+    <!--?  SELECT * FROM SCHEMASname.TABLESname WHERE COLUMNSname LIKE '%content or text%';  ?-->
+
+
+    <!--!  To UPDATE Data  !-->
+    <!--?  UPDATE SCHEMASname.TABLESname SET COLUMNSname = 'change cotent name or text' WHERE ID = 1;  ?-->
+    <!--?  UPDATE SCHEMASname.TABLESname SET COLUMNSname = 'change cotent name or text' WHERE COLUMNSname LIKE '%name of content%';  ?-->
+
+
+    <!--!  To DELETE Data  !-->
+    <!--?  DELETE FROM SCHEMASname.TABLESname WHERE COLUMNSname = 'content name';  ?-->
+    <!--?  DELETE FROM SCHEMASname.TABLESname;  ?-->
+
+
+    <!--!  OTHER Command  !-->
+    <!--?  SELECT COLUMNSname, left(another COLUMNSname, 5) FROM SCHEMASname.TABLESname;  ?-->
+    <!--?  SELECT count(ID) SCHEMASname.TABLESname;  ?-->
+
+    <!--?  SELECT Text FROM SCHEMASname WHERE Text LIKE 'Hello 1' AND Date >= '2020-01-03' AND Date < '2020-01-05';  ?-->
+    <!--?  SELECT Text FROM SCHEMASname WHERE Text LIKE 'Hello 1' AND Date >= '2020-01-03' OR Date < '2020-01-05';  ?-->
+
+    
+    <!--!  To INSERT Data  !-->
+    <!--?  INSERT INTO SCHEMASname.TABLESname SET Name = 'John1', Age = 21, Address = 'Cainta', Date = '2020-01-01', Text = 'Hello 1';  ?-->
+    <!--?  INSERT INTO SCHEMASname.TABLESname SET Name = 'John2', Age = 22, Address = 'Taytay', Date = '2020-01-02', Text = 'Hello 2';  ?-->
+    <!--?  INSERT INTO SCHEMASname.TABLESname SET Name = 'John3', Age = 23, Address = 'Angono', Date = '2020-01-03', Text = 'Hello 3';  ?-->
+    <!--?  INSERT INTO SCHEMASname.TABLESname SET Name = 'John4', Age = 24, Address = 'Pasig', Date = '2020-01-04', Text = 'Hello 4';  ?-->
+    <!--?  INSERT INTO SCHEMASname.TABLESname SET Name = 'John5', Age = 25, Address = 'Cavite', Date = '2020-01-05', Text = 'Hello 5';  ?-->
+
+
+
+
+
+</body>
+</html>
